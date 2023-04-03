@@ -10,7 +10,7 @@ import CoreData
 
 class OutfitTableViewCell: UITableViewCell {
 
-    // kaan github
+    // kaan git
     
     @IBOutlet var cellimageView: UIImageView!
     @IBOutlet var cellLabel: UILabel!
