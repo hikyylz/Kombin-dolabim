@@ -12,13 +12,19 @@ import Firebase
 class SettingsViewController: UIViewController {
 
     
-    @IBOutlet var emailEntered: UITextField!
-    @IBOutlet var passwordEntered: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if Auth.auth().currentUser?.email == nil{
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toGetEmailVC", sender: nil)
+            }
+        }
     }
     
 
@@ -82,6 +88,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction func deleteOutfitsPhone(_ sender: Any) {
         
+        // cihazdaki data yı silmek için teknik olarak email e ihtiyacı yok ama ben yine de izin vermiyeyim. 
+        if Auth.auth().currentUser == nil{
+            performSegue(withIdentifier: "toGetEmailVC", sender: nil)
+            return
+        }
+        
         let apdelegate = UIApplication.shared.delegate as! AppDelegate
         let content = apdelegate.persistentContainer.viewContext
         
@@ -101,48 +113,18 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func deleteOutfitsCloud(_ sender: Any) {
-    }
-    
-    
-    
-    @IBAction func signUpTapped(_ sender: Any) {
         
-        if emailEntered.text != "" && passwordEntered.text != ""{
-            Auth.auth().createUser(withEmail: emailEntered.text!, password: passwordEntered.text!) { authData, error in
-                if error != nil{
-                    // alert
-                    self.makeAlert(M: "error", S: error?.localizedDescription ?? "problem")
-                }else{
-                    // go..
-                    self.dismiss(animated: true)
-                }
-                    
-            }
-        }else{
-            // alert
-            makeAlert(M: "Empty box", S: "please type email and password")
+        if Auth.auth().currentUser == nil{
+            performSegue(withIdentifier: "toGetEmailVC", sender: nil)
+            return
         }
-    }
-    
-    
-    @IBAction func signInTapped(_ sender: Any) {
         
-        if emailEntered.text != "" && passwordEntered.text != ""{
-            Auth.auth().signIn(withEmail: emailEntered.text!, password: passwordEntered.text!) { authData, error in
-                if error != nil{
-                    // alert
-                    self.makeAlert(M: "error", S: error?.localizedDescription ?? "problem")
-                }else{
-                    // go..
-                    self.dismiss(animated: true)
-                }
-                    
-            }
-        }else{
-            // alert
-            makeAlert(M: "Empty box", S: "please type email and password")
-        }
+        
     }
+    
+    
+    
+   
     
     
 }

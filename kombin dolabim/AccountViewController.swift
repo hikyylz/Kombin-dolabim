@@ -16,17 +16,37 @@ class AccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if Auth.auth().currentUser != nil{
-            emailLabel.text = "Email: \(Auth.auth().currentUser?.email ?? "none") "
-        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil{
-            emailLabel.text = "Email: \(Auth.auth().currentUser?.email ?? "none") "
+        emailLabel.text = "Email: \(Auth.auth().currentUser?.email ?? " none") "
+        
+        if Auth.auth().currentUser == nil{
+            makeAlert(E: "You didnot Log in", M: "Please log in")
+            // make alert i bekle ve email , sonra tekrar bas ekrana...
+            
+            NotificationCenter.default.addObserver(self, selector: #selector( refreshEmailLabel ), name: NSNotification.Name("newUserSigned"), object: nil)
+            
         }
     }
+    
+    @objc func refreshEmailLabel(){
+        emailLabel.text = "Email: \(Auth.auth().currentUser?.email ?? " none") "
+    }
 
+    func makeAlert(E: String, M: String) {
+        let alert = UIAlertController(title: E, message: M, preferredStyle: UIAlertController.Style.alert)
+        let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default) { _ in
+            self.performSegue(withIdentifier: "toGetEmailVC", sender: nil)
+        }
+        alert.addAction(ok)
+        present(alert, animated: true)
+    }
+    
+    
+    
+    
     
     @IBAction func showtop3(_ sender: Any) {
         performSegue(withIdentifier: "ToMyTop3VC", sender: nil)

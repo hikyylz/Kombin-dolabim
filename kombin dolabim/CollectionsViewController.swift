@@ -25,12 +25,22 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         collectionsTableView.delegate = self
         collectionsTableView.dataSource = self
         
-        fetchOutfits()
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        fetchOutfits()
+        
+        
+        // log in olmadan collection göremezsin diye uyar ve log in olmasını sağla.
+        if Auth.auth().currentUser?.email == nil{
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "toGetEmailVC", sender: nil)
+            }
+        }else{
+            fetchOutfits()
+        }
+        
+        
     }
     
     func fetchOutfits(){

@@ -23,6 +23,7 @@
 		EC1F895329A24FF000FD9C76 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895229A24FF000FD9C76 /* FirebaseDatabase */; };
 		EC1F895529A24FF000FD9C76 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895429A24FF000FD9C76 /* FirebaseFirestore */; };
 		EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */; };
+		EC6A019A29DC14BB00F9A73E /* GetEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,13 +85,14 @@
 				EC1F894729A23C8200FD9C76 /* CollectionsViewController.swift */,
 				EC1F894929A242C200FD9C76 /* OutfitTableViewCell.swift */,
 				EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */,
-				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
 				EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */,
+				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
 				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
 				EC1F893C29A22C3900FD9C76 /* LaunchScreen.storyboard */,
 				EC1F893F29A22C3900FD9C76 /* Info.plist */,
 				EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */,
 				EC1F893729A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld */,
+				EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */,
 			);
 			path = "kombin dolabim";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				EC1F893929A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld in Sources */,
 				EC1F894629A2333600FD9C76 /* AddOutfitViewController.swift in Sources */,
 				EC1F893129A22C3700FD9C76 /* SceneDelegate.swift in Sources */,
+				EC6A019A29DC14BB00F9A73E /* GetEmailVC.swift in Sources */,
 				EC1F894A29A242C200FD9C76 /* OutfitTableViewCell.swift in Sources */,
 				EC1F894C29A24A3900FD9C76 /* SettingsViewController.swift in Sources */,
 				EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */,
@@ -344,9 +348,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kaanyildiz.kombin-dolabim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -372,9 +379,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kaanyildiz.kombin-dolabim";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
