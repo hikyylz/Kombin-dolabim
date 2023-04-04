@@ -43,6 +43,9 @@ class SettingsViewController: UIViewController {
         let content = apdelegate.persistentContainer.viewContext
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Outfit")
         
+        fr.predicate = NSPredicate(format: "owner = %@", currUserEmail)
+        // oluşturduğum FR e predicate önkoşul ekliyorum.
+        
         do{
             let results = try content.fetch(fr)
             for result in results as! [NSManagedObject]{
@@ -53,7 +56,7 @@ class SettingsViewController: UIViewController {
                             if let imageTop3info = result.value(forKey: "top3") as? Bool{
                                 // eldeki verileri firestore a kaydet..
                                 
-                                let newOutfitinfo = ["id":imageID.uuidString ,
+                                let newOutfitinfo = ["id":imageID.uuidString ,  // id yi tutmaya cidden gerek var mı emin değilim. ???
                                                      "image":imageData ,
                                                      "comment":imageComment ,
                                                      "is image in top3": imageTop3info ] as [String:Any]
@@ -88,7 +91,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func deleteOutfitsPhone(_ sender: Any) {
         
-        // cihazdaki data yı silmek için teknik olarak email e ihtiyacı yok ama ben yine de izin vermiyeyim. 
+        // cihazdaki data yı silmek için teknik olarak email e ihtiyacı yok ama ben yine de izin vermiyeyim.
         if Auth.auth().currentUser == nil{
             performSegue(withIdentifier: "toGetEmailVC", sender: nil)
             return
@@ -105,7 +108,7 @@ class SettingsViewController: UIViewController {
                 content.delete(result)
             }
             try content.save()
-            makeAlert(M: "done", S: "your collections was deleted in the phone")
+            makeAlert(M: "Done", S: "Your collections was deleted in the phone")
         }catch{
             makeAlert(M: "Error", S: "problem")
         }
@@ -119,7 +122,56 @@ class SettingsViewController: UIViewController {
             return
         }
         
+        var documentsID = [String]()
         
+        let currUserEmail = (Auth.auth().currentUser?.email)!
+        let firestoreDB = Firestore.firestore()
+        
+        // .delete() sadece en alt katmandan yaparak işleyen bir özellikmiş.
+        // önce silmek istediğim document lerin ismini bulacağım sonra sırayla sileceğim.
+        // clollection ı direkt silmek önerilmiyormuş. warning !
+        
+        print("bura1 --------------")
+        // current user ın cloud daki outfit collection ına ulştım.
+        let currUserCollectionsInCloud = firestoreDB.collection("Users").document(currUserEmail).collection("my collections")
+        
+        print("bura2 --------------")
+        
+        
+        // o collection daki document ların ID lerini bir dizide tutuyorum.
+        currUserCollectionsInCloud.getDocuments { querySnap, error in
+            
+            print("bura3 --------------")
+            
+            guard let documentsFromCloud = querySnap?.documents else{
+                print("bura4 --------------")
+                return
+            }
+            
+            print("bura5 --------------")
+            // silinecek document ların ID leri bu dizide.
+            for oneDocument in documentsFromCloud{
+                print("bura6 --------------")
+                documentsID.append(oneDocument.documentID)
+            }
+        }
+        
+        print("bura7 --------------")
+        
+        for docID in documentsID{
+            currUserCollectionsInCloud.document( docID ).delete { error in
+                
+                print("bura8 --------------")
+                
+                if let _ = error{
+                    print("silinemedi----------")
+                    
+                }else{
+                    print("silindi----------")
+                    
+                }
+            }
+        }
     }
     
     
