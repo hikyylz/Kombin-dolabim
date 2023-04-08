@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Entrance Of App-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="EntranceOfApp" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +116,7 @@
             </objects>
             <point key="canvasLocation" x="58.399999999999999" y="3.6945812807881775"/>
         </scene>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="oZM-bi-F42">
             <objects>
                 <viewController id="BnT-ds-ocl" customClass="SettingsViewController" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
@@ -125,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sqp-iV-rMj">
-                                <rect key="frame" x="37" y="155" width="62" height="19"/>
+                                <rect key="frame" x="37" y="199" width="62" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="uAh-w0-D1h"/>
                                 </constraints>
@@ -151,7 +151,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uv6-Bm-VGb">
-                                <rect key="frame" x="94" y="24" width="187" height="49"/>
+                                <rect key="frame" x="94" y="68" width="187" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="J9u-Um-Irx"/>
                                 </constraints>
@@ -160,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to save your outfits into cloud?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x90-QC-LP1">
-                                <rect key="frame" x="30" y="91" width="315" height="59"/>
+                                <rect key="frame" x="30" y="135" width="315" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="59" id="OwN-eu-LPs"/>
                                 </constraints>
@@ -169,7 +169,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you want to delete all you outfits in your phone?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QP-9W-dMi">
-                                <rect key="frame" x="30" y="203" width="315" height="144"/>
+                                <rect key="frame" x="30" y="247" width="315" height="100"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -224,7 +224,6 @@
                             <constraint firstItem="x90-QC-LP1" firstAttribute="top" secondItem="uv6-Bm-VGb" secondAttribute="bottom" constant="18" id="xNC-1P-Y0V"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="ucT-2j-b1w"/>
                     <navigationItem key="navigationItem" id="zTx-I7-BAh"/>
                     <connections>
                         <segue destination="FHv-00-G0S" kind="show" identifier="toGetEmailVC" id="Uhz-Zk-58O"/>
@@ -232,12 +231,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giK-wN-9oz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2161" y="1684"/>
+            <point key="canvasLocation" x="3103.1999999999998" y="1801.4778325123154"/>
         </scene>
-        <!--Get EmailVC-->
+        <!--Get Email View Controller-->
         <scene sceneID="hMh-DO-vvd">
             <objects>
-                <viewController id="FHv-00-G0S" customClass="GetEmailVC" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="FHv-00-G0S" customClass="GetEmailViewController" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="riV-cT-KKI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="802"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -295,7 +294,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="stJ-KT-Mig" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2972" y="2359"/>
+            <point key="canvasLocation" x="4044" y="1800.7389162561576"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="qeD-cv-hsp">
@@ -381,7 +380,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVk-8b-ulk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5223.1999999999998" y="982.75862068965523"/>
+            <point key="canvasLocation" x="7108" y="982.75862068965523"/>
         </scene>
         <!--Account View Controller-->
         <scene sceneID="UNu-GC-6Gs">
@@ -455,9 +454,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr4-yM-BBB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3103.1999999999998" y="982.75862068965523"/>
+            <point key="canvasLocation" x="3102" y="1032"/>
         </scene>
-        <!--collections-->
+        <!--Collections View Controller-->
         <scene sceneID="Fs2-sk-hiH">
             <objects>
                 <viewController id="ccq-iQ-yom" customClass="CollectionsViewController" customModule="kombin_dolabim" customModuleProvider="target" sceneMemberID="viewController">
@@ -466,7 +465,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="5at-62-RLG">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="763"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="431" id="JLf-WR-rVN" customClass="OutfitTableViewCell" customModule="kombin_dolabim" customModuleProvider="target">
@@ -563,7 +562,7 @@
                             <constraint firstAttribute="trailing" secondItem="5at-62-RLG" secondAttribute="trailing" id="aUa-uE-Z6Y"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="collections" image="tray.full" catalog="system" id="3rK-wx-TBl"/>
+                    <navigationItem key="navigationItem" id="MFH-wA-mvj"/>
                     <connections>
                         <outlet property="collectionsTableView" destination="5at-62-RLG" id="mvM-bq-kTD"/>
                         <segue destination="FHv-00-G0S" kind="show" identifier="toGetEmailVC" id="Lpu-KH-vDf"/>
@@ -571,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebY-Ua-g83" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2160.8000000000002" y="311.82266009852219"/>
+            <point key="canvasLocation" x="3103.1999999999998" y="311.82266009852219"/>
         </scene>
         <!--add outfit-->
         <scene sceneID="ewL-Mh-0se">
@@ -621,7 +620,7 @@
                     <tabBarItem key="tabBarItem" title="add outfit" image="square.and.arrow.up" catalog="system" id="o7Q-z0-CCb"/>
                     <connections>
                         <outlet property="enteredComment" destination="pDZ-cI-Ae7" id="Wpa-lJ-xTf"/>
-                        <outlet property="imageVİew" destination="dye-Dg-jm2" id="HpU-7R-vLD"/>
+                        <outlet property="imageView" destination="dye-Dg-jm2" id="HpU-7R-vLD"/>
                         <outlet property="saveButton" destination="Lh0-dW-4Ac" id="crI-Pv-dXZ"/>
                         <segue destination="FHv-00-G0S" kind="show" identifier="toGetEmailVC" id="1cg-f5-Z9e"/>
                     </connections>
@@ -642,8 +641,8 @@
                     <connections>
                         <segue destination="mUu-HS-OJW" kind="relationship" relationship="viewControllers" id="RaV-I9-HKE"/>
                         <segue destination="27e-qS-7hg" kind="relationship" relationship="viewControllers" id="VTD-h5-ZrG"/>
-                        <segue destination="ccq-iQ-yom" kind="relationship" relationship="viewControllers" id="cn1-nx-kfR"/>
-                        <segue destination="BnT-ds-ocl" kind="relationship" relationship="viewControllers" id="glh-vM-brb"/>
+                        <segue destination="Q4q-jO-ymR" kind="relationship" relationship="viewControllers" id="cn1-nx-kfR"/>
+                        <segue destination="jKx-7O-9VN" kind="relationship" relationship="viewControllers" id="glh-vM-brb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nyw-Fb-Sts" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -667,11 +666,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UzD-Yv-VsD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="1033"/>
+            <point key="canvasLocation" x="2161" y="1032"/>
+        </scene>
+        <!--collections-->
+        <scene sceneID="PXL-c0-4ct">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q4q-jO-ymR" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="collections" image="tray.full" catalog="system" id="3rK-wx-TBl"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uVj-9D-Aln">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ccq-iQ-yom" kind="relationship" relationship="rootViewController" id="UQ4-94-sSR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UNx-GR-lvb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8000000000002" y="311.82266009852219"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="u7h-zD-zlc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jKx-7O-9VN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="ucT-2j-b1w"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="H8m-gP-tcd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BnT-ds-ocl" kind="relationship" relationship="rootViewController" id="MgY-01-QGI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W72-ok-swT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2160.8000000000002" y="1801.4778325123154"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uhz-Zk-58O"/>
+        <segue reference="1cg-f5-Z9e"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="122"/>

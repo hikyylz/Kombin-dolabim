@@ -13,7 +13,7 @@
 import UIKit
 import LocalAuthentication
 
-class ViewController: UIViewController {
+class EntranceOfApp: UIViewController {
 
     @IBOutlet var emailF: UITextField!
     @IBOutlet var passwordF: UITextField!
@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     @IBAction func viaFaceIDTapped(_ sender: Any) {
         
         let autContext = LAContext()
-        
         var error: NSError?
         
         if autContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error){
@@ -44,7 +43,7 @@ class ViewController: UIViewController {
                     
                 }else{
                     DispatchQueue.main.async {
-                        self.makeAlert()
+                        ErrorClass.makeAlertWith(ViewController: self)
                     }
                     
                 }
@@ -56,15 +55,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func saveTapped(_ sender: Any) {
+        // new user bilgilerini girer, kaydolur, app açılır...
         
     }
     
     
-    func makeAlert(){
-        let alert = UIAlertController(title: "error", message: "problem", preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default)
-        alert.addAction(ok)
-        present(alert, animated: true)
-    }
+    
 }
 

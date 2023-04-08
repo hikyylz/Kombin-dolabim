@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		EC1F892F29A22C3700FD9C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */; };
 		EC1F893129A22C3700FD9C76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */; };
-		EC1F893329A22C3700FD9C76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893229A22C3700FD9C76 /* ViewController.swift */; };
+		EC1F893329A22C3700FD9C76 /* EntranceOfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */; };
 		EC1F893629A22C3700FD9C76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EC1F893429A22C3700FD9C76 /* Main.storyboard */; };
 		EC1F893929A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893729A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld */; };
 		EC1F893B29A22C3900FD9C76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EC1F893A29A22C3900FD9C76 /* Assets.xcassets */; };
@@ -23,14 +23,16 @@
 		EC1F895329A24FF000FD9C76 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895229A24FF000FD9C76 /* FirebaseDatabase */; };
 		EC1F895529A24FF000FD9C76 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895429A24FF000FD9C76 /* FirebaseFirestore */; };
 		EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */; };
-		EC6A019A29DC14BB00F9A73E /* GetEmailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */; };
+		EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */; };
+		ECCB3A5429E1A38100E21CCB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5329E1A38100E21CCB /* Error.swift */; };
+		ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EC1F892B29A22C3700FD9C76 /* kombin dolabim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kombin dolabim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EC1F893229A22C3700FD9C76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntranceOfApp.swift; sourceTree = "<group>"; };
 		EC1F893529A22C3700FD9C76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EC1F893829A22C3700FD9C76 /* kombin_dolabim.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = kombin_dolabim.xcdatamodel; sourceTree = "<group>"; };
 		EC1F893A29A22C3900FD9C76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,7 +44,9 @@
 		EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
-		EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailVC.swift; sourceTree = "<group>"; };
+		EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailViewController.swift; sourceTree = "<group>"; };
+		ECCB3A5329E1A38100E21CCB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,23 +82,49 @@
 		EC1F892D29A22C3700FD9C76 /* kombin dolabim */ = {
 			isa = PBXGroup;
 			children = (
-				EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */,
-				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
-				EC1F893229A22C3700FD9C76 /* ViewController.swift */,
+				ECCB3A5229E1A23F00E21CCB /* Service */,
+				ECCB3A5129E1A23100E21CCB /* model */,
+				ECCB3A5029E1A22400E21CCB /* View */,
+				EC1F893C29A22C3900FD9C76 /* LaunchScreen.storyboard */,
+				EC1F893F29A22C3900FD9C76 /* Info.plist */,
+				EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */,
+				EC1F893729A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld */,
+			);
+			path = "kombin dolabim";
+			sourceTree = "<group>";
+		};
+		ECCB3A5029E1A22400E21CCB /* View */ = {
+			isa = PBXGroup;
+			children = (
 				EC1F894529A2333600FD9C76 /* AddOutfitViewController.swift */,
 				EC1F894729A23C8200FD9C76 /* CollectionsViewController.swift */,
 				EC1F894929A242C200FD9C76 /* OutfitTableViewCell.swift */,
 				EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */,
 				EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */,
-				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
-				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
-				EC1F893C29A22C3900FD9C76 /* LaunchScreen.storyboard */,
-				EC1F893F29A22C3900FD9C76 /* Info.plist */,
-				EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */,
-				EC1F893729A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld */,
-				EC6A019929DC14BB00F9A73E /* GetEmailVC.swift */,
+				EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */,
+				EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */,
+				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
+				EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */,
 			);
-			path = "kombin dolabim";
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECCB3A5129E1A23100E21CCB /* model */ = {
+			isa = PBXGroup;
+			children = (
+				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
+				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
+				ECCB3A5329E1A38100E21CCB /* Error.swift */,
+				ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		ECCB3A5229E1A23F00E21CCB /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,12 +208,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				EC1F894829A23C8200FD9C76 /* CollectionsViewController.swift in Sources */,
-				EC1F893329A22C3700FD9C76 /* ViewController.swift in Sources */,
+				EC1F893329A22C3700FD9C76 /* EntranceOfApp.swift in Sources */,
 				EC1F892F29A22C3700FD9C76 /* AppDelegate.swift in Sources */,
+				ECCB3A5429E1A38100E21CCB /* Error.swift in Sources */,
+				ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */,
 				EC1F893929A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld in Sources */,
 				EC1F894629A2333600FD9C76 /* AddOutfitViewController.swift in Sources */,
 				EC1F893129A22C3700FD9C76 /* SceneDelegate.swift in Sources */,
-				EC6A019A29DC14BB00F9A73E /* GetEmailVC.swift in Sources */,
+				EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */,
 				EC1F894A29A242C200FD9C76 /* OutfitTableViewCell.swift in Sources */,
 				EC1F894C29A24A3900FD9C76 /* SettingsViewController.swift in Sources */,
 				EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */,

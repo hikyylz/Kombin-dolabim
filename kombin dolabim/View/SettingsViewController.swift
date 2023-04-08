@@ -12,7 +12,6 @@ import Firebase
 class SettingsViewController: UIViewController {
 
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -63,7 +62,7 @@ class SettingsViewController: UIViewController {
                                 
                                 //firestoreDB.collection("Outfits").document(imageID.uuidString).setData(newOutfitinfo, merge: true)
                                 firestoreDB.collection("Users").document(currUserEmail).collection("my collections").document(imageID.uuidString).setData(newOutfitinfo, merge: true)
-                                makeAlert(M: "Saving Done", S: "your collection was saved in cloud")
+                                ErrorClass.makeAlertWith(M: "Saving Done", S: "your collection was saved in cloud", ViewController: self)
                                 
                             }
                         }
@@ -75,19 +74,14 @@ class SettingsViewController: UIViewController {
             
             
         }catch{
-            makeAlert(M: "Error", S: "saving failed")
+            ErrorClass.makeAlertWith(M: "Error", S: "saving failed", ViewController: self)
         }
         
         
         
     }
     
-    func makeAlert(M:String , S:String){
-        let alert = UIAlertController(title: M, message: S, preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default)
-        alert.addAction(ok)
-        present(alert, animated: true)
-    }
+    
     
     @IBAction func deleteOutfitsPhone(_ sender: Any) {
         
@@ -108,9 +102,10 @@ class SettingsViewController: UIViewController {
                 content.delete(result)
             }
             try content.save()
-            makeAlert(M: "Done", S: "Your collections was deleted in the phone")
+            ErrorClass.makeAlertWith(M: "Done", S: "Your collections was deleted in the phone", ViewController: self)
+            
         }catch{
-            makeAlert(M: "Error", S: "problem")
+            ErrorClass.makeAlertWith(M: "Error", S: "Problem", ViewController: self)
         }
     }
     
@@ -122,53 +117,26 @@ class SettingsViewController: UIViewController {
             return
         }
         
-        var documentsID = [String]()
-        
-        let currUserEmail = (Auth.auth().currentUser?.email)!
         let firestoreDB = Firestore.firestore()
+        let currentUserEmail = (Auth.auth().currentUser?.email)!
         
-        // .delete() sadece en alt katmandan yaparak işleyen bir özellikmiş.
-        // önce silmek istediğim document lerin ismini bulacağım sonra sırayla sileceğim.
-        // clollection ı direkt silmek önerilmiyormuş. warning !
+        let userImageColl = firestoreDB.collection("Users").document(currentUserEmail).collection("my collections")
         
-        print("bura1 --------------")
-        // current user ın cloud daki outfit collection ına ulştım.
-        let currUserCollectionsInCloud = firestoreDB.collection("Users").document(currUserEmail).collection("my collections")
-        
-        print("bura2 --------------")
-        
-        
-        // o collection daki document ların ID lerini bir dizide tutuyorum.
-        currUserCollectionsInCloud.getDocuments { querySnap, error in
+        userImageColl.getDocuments { q, e in
             
-            print("bura3 --------------")
-            
-            guard let documentsFromCloud = querySnap?.documents else{
-                print("bura4 --------------")
+            guard let data = q?.documents else{
                 return
             }
             
-            print("bura5 --------------")
-            // silinecek document ların ID leri bu dizide.
-            for oneDocument in documentsFromCloud{
-                print("bura6 --------------")
-                documentsID.append(oneDocument.documentID)
-            }
-        }
-        
-        print("bura7 --------------")
-        
-        for docID in documentsID{
-            currUserCollectionsInCloud.document( docID ).delete { error in
+            for i in data{
                 
-                print("bura8 --------------")
-                
-                if let _ = error{
-                    print("silinemedi----------")
-                    
-                }else{
-                    print("silindi----------")
-                    
+                // clod da bir şey sildiğinde içi tamamşyle boşalan her başlık siliniyor .
+                userImageColl.document(i.documentID).delete { e in
+                    if let _ = e{
+                        ErrorClass.makeAlertWith(M: "Error", S: "Your data did not deleted from cloud", ViewController: self)
+                    }else{
+                        ErrorClass.makeAlertWith(M: "Done", S: "Your data was deleted form cloud", ViewController: self)
+                    }
                 }
             }
         }

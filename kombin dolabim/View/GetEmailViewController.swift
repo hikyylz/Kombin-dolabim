@@ -9,7 +9,7 @@ import UIKit
 import Firebase
 
 
-class GetEmailVC: UIViewController {
+class GetEmailViewController: UIViewController {
 
     @IBOutlet var typedEmail: UITextField!
     @IBOutlet var typedPasword: UITextField!

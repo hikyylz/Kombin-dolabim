@@ -25,6 +25,8 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         collectionsTableView.delegate = self
         collectionsTableView.dataSource = self
         
+        navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: "Collections from Cloud", style: .plain, target: self, action: #selector(getCollection))
+        
         
     }
     
@@ -39,6 +41,12 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         }else{
             fetchOutfits()
         }
+        
+        
+    }
+    
+    @objc func getCollection(){
+        
         
         
     }
