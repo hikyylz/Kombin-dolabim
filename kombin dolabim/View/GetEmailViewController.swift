@@ -27,7 +27,7 @@ class GetEmailViewController: UIViewController {
             Auth.auth().createUser(withEmail: typedEmail.text!, password: typedPasword.text!) { authData, error in
                 if error != nil{
                     // alert
-                    self.makeAlert(M: "error", S: error?.localizedDescription ?? "problem")
+                    ErrorClass.makeAlertWith(S: error?.localizedDescription ?? "problem", ViewController: self)
                 }else{
                     // go..
                     NotificationCenter.default.post(name: NSNotification.Name("newUserSigned"), object: nil)
@@ -37,7 +37,7 @@ class GetEmailViewController: UIViewController {
             }
         }else{
             // alert
-            makeAlert(M: "Empty box", S: "please type email and password")
+            ErrorClass.makeAlertWith(M: "Empty box", S: "please type email and password", ViewController: self)
         }
     }
     
@@ -49,7 +49,7 @@ class GetEmailViewController: UIViewController {
             Auth.auth().signIn(withEmail: typedEmail.text!, password: typedPasword.text!) { authData, error in
                 if error != nil{
                     // alert
-                    self.makeAlert(M: "error", S: error?.localizedDescription ?? "problem")
+                    ErrorClass.makeAlertWith(S: error?.localizedDescription ?? "problem", ViewController: self)
                 }else{
                     // go..
                     NotificationCenter.default.post(name: NSNotification.Name("newUserSigned"), object: nil)
@@ -59,17 +59,10 @@ class GetEmailViewController: UIViewController {
             }
         }else{
             // alert
-            makeAlert(M: "Empty box", S: "please type email and password")
+            ErrorClass.makeAlertWith(M: "Empty box", S: "please type email and password", ViewController: self)
         }
     }
     
     
-    
-    func makeAlert(M:String , S:String){
-        let alert = UIAlertController(title: M, message: S, preferredStyle: UIAlertController.Style.alert)
-        let ok = UIAlertAction(title: "ok", style: UIAlertAction.Style.default)
-        alert.addAction(ok)
-        present(alert, animated: true)
-    }
     
 }
