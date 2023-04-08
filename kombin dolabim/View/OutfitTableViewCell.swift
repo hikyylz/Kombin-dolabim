@@ -87,13 +87,6 @@ class OutfitTableViewCell: UITableViewCell {
             }
         }
         
-        
-        
-        
-        
-        
-        
-        
     }
     
     func canbetop3() -> Bool{

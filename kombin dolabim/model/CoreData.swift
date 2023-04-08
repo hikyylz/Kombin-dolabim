@@ -33,4 +33,30 @@ class CoreData{
             
         }
     }
+    
+    
+    enum FetchError : Error{
+        case fectFailed
+    }
+    
+    static func FetchRequstWithPredicate(EntityName: String, predicateAtribute: String, _ EqualTo: String) -> [NSFetchRequestResult]? {
+        
+        // coredata ya ulaşmak için lazım olan aracı context e ulaştım
+        let apdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = apdelegate.persistentContainer.viewContext
+        
+        // fetch request imi oluşturdum
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: EntityName)
+        
+        // fetch edilecek olan nesnelere belirtilen sınırlayıcı ayarlanıyor
+        fetchRequest.predicate = NSPredicate(format: "\(predicateAtribute) = %@", EqualTo)
+        
+        do{
+            return try context.fetch(fetchRequest)
+        }catch{
+            print(FetchError.fectFailed)
+            return nil
+        }
+        
+    }
 }

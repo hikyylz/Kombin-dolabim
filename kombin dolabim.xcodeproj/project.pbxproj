@@ -26,6 +26,7 @@
 		EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */; };
 		ECCB3A5429E1A38100E21CCB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5329E1A38100E21CCB /* Error.swift */; };
 		ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */; };
+		ECCB3A5C29E1F40500E21CCB /* OutfitClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailViewController.swift; sourceTree = "<group>"; };
 		ECCB3A5329E1A38100E21CCB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
 				ECCB3A5329E1A38100E21CCB /* Error.swift */,
 				ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */,
+				ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				EC1F894A29A242C200FD9C76 /* OutfitTableViewCell.swift in Sources */,
 				EC1F894C29A24A3900FD9C76 /* SettingsViewController.swift in Sources */,
 				EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */,
+				ECCB3A5C29E1F40500E21CCB /* OutfitClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
