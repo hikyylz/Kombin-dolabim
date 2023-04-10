@@ -24,9 +24,11 @@
 		EC1F895529A24FF000FD9C76 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895429A24FF000FD9C76 /* FirebaseFirestore */; };
 		EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */; };
 		EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */; };
-		ECCB3A5429E1A38100E21CCB /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5329E1A38100E21CCB /* Error.swift */; };
+		ECCB3A5429E1A38100E21CCB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5329E1A38100E21CCB /* Alert.swift */; };
 		ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */; };
 		ECCB3A5C29E1F40500E21CCB /* OutfitClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */; };
+		ECF7A78829E4450D009C0F77 /* Cloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF7A78729E4450D009C0F77 /* Cloud.swift */; };
+		ECF7A78D29E44D8C009C0F77 /* OutfitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECF7A78C29E44D8C009C0F77 /* OutfitManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,9 +48,11 @@
 		EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailViewController.swift; sourceTree = "<group>"; };
-		ECCB3A5329E1A38100E21CCB /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		ECCB3A5329E1A38100E21CCB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
 		ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitClass.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		ECF7A78729E4450D009C0F77 /* Cloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cloud.swift; sourceTree = "<group>"; };
+		ECF7A78C29E44D8C009C0F77 /* OutfitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutfitManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +90,11 @@
 			children = (
 				ECCB3A5229E1A23F00E21CCB /* Service */,
 				ECCB3A5129E1A23100E21CCB /* model */,
+				ECF7A78B29E44BBA009C0F77 /* ViewModel */,
 				ECCB3A5029E1A22400E21CCB /* View */,
 				EC1F893C29A22C3900FD9C76 /* LaunchScreen.storyboard */,
+				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
+				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
 				EC1F893F29A22C3900FD9C76 /* Info.plist */,
 				EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */,
 				EC1F893729A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld */,
@@ -114,11 +121,6 @@
 		ECCB3A5129E1A23100E21CCB /* model */ = {
 			isa = PBXGroup;
 			children = (
-				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
-				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
-				ECCB3A5329E1A38100E21CCB /* Error.swift */,
-				ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */,
-				ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -126,8 +128,20 @@
 		ECCB3A5229E1A23F00E21CCB /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */,
+				ECF7A78729E4450D009C0F77 /* Cloud.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		ECF7A78B29E44BBA009C0F77 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				ECCB3A5B29E1F40500E21CCB /* OutfitClass.swift */,
+				ECCB3A5329E1A38100E21CCB /* Alert.swift */,
+				ECF7A78C29E44D8C009C0F77 /* OutfitManager.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +227,8 @@
 				EC1F894829A23C8200FD9C76 /* CollectionsViewController.swift in Sources */,
 				EC1F893329A22C3700FD9C76 /* EntranceOfApp.swift in Sources */,
 				EC1F892F29A22C3700FD9C76 /* AppDelegate.swift in Sources */,
-				ECCB3A5429E1A38100E21CCB /* Error.swift in Sources */,
+				ECCB3A5429E1A38100E21CCB /* Alert.swift in Sources */,
+				ECF7A78D29E44D8C009C0F77 /* OutfitManager.swift in Sources */,
 				ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */,
 				EC1F893929A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld in Sources */,
 				EC1F894629A2333600FD9C76 /* AddOutfitViewController.swift in Sources */,
@@ -221,6 +236,7 @@
 				EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */,
 				EC1F894A29A242C200FD9C76 /* OutfitTableViewCell.swift in Sources */,
 				EC1F894C29A24A3900FD9C76 /* SettingsViewController.swift in Sources */,
+				ECF7A78829E4450D009C0F77 /* Cloud.swift in Sources */,
 				EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */,
 				ECCB3A5C29E1F40500E21CCB /* OutfitClass.swift in Sources */,
 			);

@@ -22,7 +22,7 @@ class OutfitsList{
                     if let star = result.value(forKey: "top3") as? Bool{
                         if let id = result.value(forKey: "id") as? UUID{
                             
-                            var newOutfit = OutfitClass(imageData: imageData, id: id, comment: comment, tab3: star)
+                            let newOutfit = OutfitClass(imageData: imageData, id: id, comment: comment, tab3: star)
                             Outfits.append(newOutfit)
                             
                         }

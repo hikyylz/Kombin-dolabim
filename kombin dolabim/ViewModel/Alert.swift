@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ErrorClass{
+class AlertClass{
     
     
     static func makeAlertWith(M: String = "error", S: String = "problem", ViewController: UIViewController){

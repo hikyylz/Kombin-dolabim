@@ -11,11 +11,11 @@ import Firebase
 
 class SettingsViewController: UIViewController {
 
+    private let myOutfitManager = OutfitManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,10 +59,9 @@ class SettingsViewController: UIViewController {
                                                      "image":imageData ,
                                                      "comment":imageComment ,
                                                      "is image in top3": imageTop3info ] as [String:Any]
-                                
-                                //firestoreDB.collection("Outfits").document(imageID.uuidString).setData(newOutfitinfo, merge: true)
+                                 
                                 firestoreDB.collection("Users").document(currUserEmail).collection("my collections").document(imageID.uuidString).setData(newOutfitinfo, merge: true)
-                                ErrorClass.makeAlertWith(M: "Saving Done", S: "your collection was saved in cloud", ViewController: self)
+                                AlertClass.makeAlertWith(M: "Saving Done", S: "your collection was saved in cloud", ViewController: self)
                                 
                             }
                         }
@@ -74,7 +73,7 @@ class SettingsViewController: UIViewController {
             
             
         }catch{
-            ErrorClass.makeAlertWith(M: "Error", S: "saving failed", ViewController: self)
+            AlertClass.makeAlertWith(M: "Error", S: "saving failed", ViewController: self)
         }
         
         
@@ -84,28 +83,12 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func deleteOutfitsPhone(_ sender: Any) {
-        
         // cihazdaki data yı silmek için teknik olarak email e ihtiyacı yok ama ben yine de izin vermiyeyim.
         if Auth.auth().currentUser == nil{
             performSegue(withIdentifier: "toGetEmailVC", sender: nil)
             return
-        }
-        
-        let apdelegate = UIApplication.shared.delegate as! AppDelegate
-        let content = apdelegate.persistentContainer.viewContext
-        
-        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "Outfit")
-        
-        do{
-            let results = try content.fetch(fr)
-            for result in results as! [NSManagedObject]{
-                content.delete(result)
-            }
-            try content.save()
-            ErrorClass.makeAlertWith(M: "Done", S: "Your collections was deleted in the phone", ViewController: self)
-            
-        }catch{
-            ErrorClass.makeAlertWith(M: "Error", S: "Problem", ViewController: self)
+        }else{
+            myOutfitManager.clearCoreDataFor("Outfit", ViewController: self)
         }
     }
     
@@ -133,9 +116,9 @@ class SettingsViewController: UIViewController {
                 // clod da bir şey sildiğinde içi tamamşyle boşalan her başlık siliniyor .
                 userImageColl.document(i.documentID).delete { e in
                     if let _ = e{
-                        ErrorClass.makeAlertWith(M: "Error", S: "Your data did not deleted from cloud", ViewController: self)
+                        AlertClass.makeAlertWith(M: "Error", S: "Your data did not deleted from cloud", ViewController: self)
                     }else{
-                        ErrorClass.makeAlertWith(M: "Done", S: "Your data was deleted form cloud", ViewController: self)
+                        AlertClass.makeAlertWith(M: "Done", S: "Your data was deleted form cloud", ViewController: self)
                     }
                 }
             }

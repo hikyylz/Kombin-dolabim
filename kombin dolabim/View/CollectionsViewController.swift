@@ -11,9 +11,10 @@ import Firebase
 
 class CollectionsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let navigationTitle = "Collections from Cloud"
+    private let navigationTitle = "Collections from Cloud"
+    private var userEmail = String()
     private var Outfits = [OutfitClass]()
-
+    private let myOutfitManager = OutfitManager()
     @IBOutlet var collectionsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -25,6 +26,8 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         navigationController?.navigationBar.topItem?.rightBarButtonItem = UIBarButtonItem(title: navigationTitle, style: .plain, target: self, action: #selector(getCollection))
         
         
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,14 +36,18 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
             DispatchQueue.main.async {
                 self.performSegue(withIdentifier: "toGetEmailVC", sender: nil)
             }
+            
         }else{
             // load data ...
-            let fetchResult = CoreData.FetchRequstWithPredicate(EntityName: "Outfit", predicateAtribute: "owner", (Auth.auth().currentUser?.email)!)
-            if let FR = fetchResult{
-                let OutFitsClass = OutfitsList(via: FR)
-                self.Outfits = OutFitsClass.getOutFitList()
+            userEmail = Auth.auth().currentUser?.email ?? ""
+            myOutfitManager.getOutfits(EntityName: "Outfit", predicateAtribute: "owner", userEmail) { ListOk, resultList in
+                if ListOk{
+                    self.Outfits = resultList
+                    self.collectionsTableView.reloadData()
+                }else{
+                    AlertClass.makeAlertWith(M: "Collection Display Error", S: "Collections could not prepared", ViewController: self)
+                }
             }
-            collectionsTableView.reloadData()
         }
     }
     

@@ -43,7 +43,7 @@ class EntranceOfApp: UIViewController {
                     
                 }else{
                     DispatchQueue.main.async {
-                        ErrorClass.makeAlertWith(ViewController: self)
+                        AlertClass.makeAlertWith(ViewController: self)
                     }
                     
                 }

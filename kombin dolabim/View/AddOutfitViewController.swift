@@ -15,6 +15,7 @@ class AddOutfitViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var enteredComment: UITextField!
     @IBOutlet var saveButton: UIButton!
     
+    private let myOutfitManager = OutfitManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +53,11 @@ class AddOutfitViewController: UIViewController, UIImagePickerControllerDelegate
     @IBAction func saveTapped(_ sender: Any) {
         // core dataya kaydediyorum burada sadece. Firebase e kaydetmek ayrı bir işlem.
         
-        CoreData.saveNewOutfit(image: imageView.image!, comment: enteredComment.text!)
+        myOutfitManager.saveNewOutfit(image: imageView.image!, comment: enteredComment.text!) {savingSattus in
+            if savingSattus == OutifitSavingStatus.notSaved{
+                AlertClass.makeAlertWith(M: "Not saved", S: "Your outfit is not enough georgeus", ViewController: self)
+            }
+        }
         
         imageView.image = UIImage(named: "select")
         enteredComment.text = ""

@@ -23,7 +23,7 @@ class AccountViewController: UIViewController {
         emailLabel.text = "Email: \(Auth.auth().currentUser?.email ?? " none") "
         
         if Auth.auth().currentUser == nil{
-            ErrorClass.SequeAfterAlert(E: "You didnot Log in", M: "Please log in", ViewController: self, sequeName: "toGetEmailVC")
+            AlertClass.SequeAfterAlert(E: "You didnot Log in", M: "Please log in", ViewController: self, sequeName: "toGetEmailVC")
             // make alert i bekle ve email , sonra tekrar bas ekrana...
             
             NotificationCenter.default.addObserver(self, selector: #selector( refreshEmailLabel ), name: NSNotification.Name("newUserSigned"), object: nil)
