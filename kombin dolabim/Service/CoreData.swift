@@ -17,6 +17,92 @@ enum FetchError : Error{
 
 class CoreData{
     
+    func makeDarkOutfit(cellID: String){
+        let apdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = apdelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Outfit")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", cellID)
+        
+        do{
+            let results = try context.fetch(fetchRequest)
+            for result in results as![NSManagedObject]{
+                if let id = result.value(forKey: "id") as? UUID{
+                    if cellID == id.uuidString {
+                        result.setValue(false, forKey: "top3")
+                    }
+                }
+            }
+            try context.save()
+        }catch{ }
+    }
+    
+    func makeTop3(cellID: String, complation: @escaping(UIColor?)->()) {
+        let apdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = apdelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Outfit")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", cellID)
+        
+        do{
+            let results = try context.fetch(fetchRequest)
+            for result in results as![NSManagedObject]{
+                
+                if let id = result.value(forKey: "id") as? UUID{
+                    
+                    if cellID == id.uuidString {
+                        // star lama bu id li outfit i..
+                        guard let isItTop3Already = result.value(forKey: "top3") as? Bool else{
+                            return
+                        }
+                        switch isItTop3Already{
+                        case true:
+                            // ışığını söndür..
+                            result.setValue(false, forKey: "top3")
+                            try context.save()
+                            complation(.black)
+                            break
+                        case false:
+                            // dünyamı aydınlat..
+                            result.setValue(true, forKey: "top3")
+                            try context.save()
+                            complation(.orange)
+                            break
+                        }
+                    }
+                }
+            }
+        }catch{ }
+    }
+    
+    func canbetop3() -> Bool{
+        // 3 tane starlı varsa false döndür, true otherwise.
+        var starCounter = 0
+        
+        let apdelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = apdelegate.persistentContainer.viewContext
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Outfit")
+        
+        do{
+            let results = try context.fetch(fetchRequest)
+            for result in results as! [NSManagedObject]{
+                if let isStar = result.value(forKey: "top3") as? Bool{
+                    if isStar{
+                        starCounter += 1
+                    }
+                }
+            }
+            try context.save()
+        }catch{ }
+        
+        if starCounter < 3{
+            return true
+        }else{
+            return false
+        }
+    }
+    
     func clearCoreDataFor(_ EntityName: String, ViewController: UIViewController){
         
         let apdelegate = UIApplication.shared.delegate as! AppDelegate

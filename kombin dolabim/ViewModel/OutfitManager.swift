@@ -17,6 +17,21 @@ struct OutfitManager{
     
     private let myCoreData = CoreData()
     
+    func top3Tapped(cellID: String, completion: @escaping(UIColor)->()){
+        let canBeTop3 = myCoreData.canbetop3()
+        if canBeTop3 {
+            // tıklanılan cell i top3 olarak işaretler
+            myCoreData.makeTop3(cellID: cellID) { returnedColor in
+                completion(returnedColor ?? .black)
+            }
+            
+        }else{
+            // top3 olamaz. Olanı da kaldır.
+            myCoreData.makeDarkOutfit(cellID: cellID)
+            completion(.black)
+        }
+    }
+    
     func clearCoreDataFor(_ EntityName: String, ViewController: UIViewController){
         myCoreData.clearCoreDataFor(EntityName, ViewController: ViewController)
     }
