@@ -66,12 +66,12 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
         let Cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! OutfitTableViewCell
         Cell.cellimageView.image = self.Outfits[indexPath.row].getImage()
         Cell.cellLabel.text = self.Outfits[indexPath.row].getComment()
-        if self.Outfits[indexPath.row].getTab3(){
+        if self.Outfits[indexPath.row].getTab3()!{
             Cell.star.backgroundColor = UIColor.orange
         }else{
             Cell.star.backgroundColor = UIColor.black
         }
-        Cell.idlabel.text = self.Outfits[indexPath.row].getID().uuidString
+        Cell.idlabel.text = self.Outfits[indexPath.row].getID()?.uuidString
         return Cell
     }
 

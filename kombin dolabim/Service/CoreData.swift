@@ -124,13 +124,13 @@ class CoreData{
     }
     
     
-    func getOutfits(EntityName: String, predicateAtribute: String, _ EqualTo: String) -> [OutfitClass] {
+    func getOutfits(EntityName: String, predicateAtribute: String, _ EqualTo: String) -> [OutfitClass]? {
         let fetchResult = CoreData.FetchRequstWithPredicate(EntityName: EntityName, predicateAtribute: predicateAtribute, EqualTo)
         guard let FR = fetchResult else{
             return []
         }
-        let OutFitsClass = OutfitsList(via: FR)
-        return OutFitsClass.getOutFitList()
+        
+        return FR
     }
     
     
@@ -163,7 +163,7 @@ class CoreData{
     
     
     
-    static func FetchRequstWithPredicate(EntityName: String, predicateAtribute: String, _ EqualTo: String) -> [NSFetchRequestResult]? {
+    static func FetchRequstWithPredicate(EntityName: String, predicateAtribute: String, _ EqualTo: String) -> [OutfitClass]? {
         
         // coredata ya ulaşmak için lazım olan aracı context e ulaştım
         let apdelegate = UIApplication.shared.delegate as! AppDelegate
@@ -176,7 +176,8 @@ class CoreData{
         fetchRequest.predicate = NSPredicate(format: "\(predicateAtribute) = %@", EqualTo)
         
         do{
-            return try context.fetch(fetchRequest)
+            let fetchResult = try context.fetch(fetchRequest)
+            return OutfitsList(via: fetchResult).getOutFitList()
         }catch{
             print(FetchError.fectFailed)
             return nil

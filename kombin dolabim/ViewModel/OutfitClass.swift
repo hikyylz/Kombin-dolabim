@@ -60,15 +60,15 @@ class OutfitClass{
         return UIImage(data: imageData)!
     }
     
-    func getComment() -> String{
+    func getComment() -> String?{
         return comment
     }
     
-    func getTab3() -> Bool{
+    func getTab3() -> Bool?{
         return tab3
     }
     
-    func getID() -> UUID{
+    func getID() -> UUID?{
         return id
     }
 }
