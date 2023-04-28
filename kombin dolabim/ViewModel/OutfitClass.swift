@@ -13,6 +13,11 @@ class OutfitsList{
     
     private var Outfits = [OutfitClass]()
     
+    // cloud dan çektiğim dataları bu init ile OutfitList esine dönüştürerek kullancağım
+    init(Outfits : [OutfitClass]){
+        self.Outfits = Outfits
+    }
+    
     init(via fetchResult: [NSFetchRequestResult]){
         
         for result in fetchResult as! [NSManagedObject]{
@@ -29,9 +34,7 @@ class OutfitsList{
                     }
                 }
             }
-            
         }
-        
     }
     
     func getOutFitList() -> [OutfitClass]{

@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import FirebaseAuth
 
 class OutfitTableViewCell: UITableViewCell {
 
@@ -15,7 +16,7 @@ class OutfitTableViewCell: UITableViewCell {
     @IBOutlet var star: UIView!
     @IBOutlet var idlabel: UILabel!
     
-    private let myOutfitManager = OutfitManager()
+    private let myOutfitManager = OutfitManager(currUserEmail: (Auth.auth().currentUser?.email)!)
     
     override func awakeFromNib() {
         super.awakeFromNib()

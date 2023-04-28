@@ -14,7 +14,7 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
     private let navigationTitle = "Collections from Cloud"
     private var userEmail = String()
     private var Outfits = [OutfitClass]()
-    private let myOutfitManager = OutfitManager()
+    private let myOutfitManager = OutfitManager(currUserEmail: (Auth.auth().currentUser?.email)!)
     @IBOutlet var collectionsTableView: UITableView!
     
     override func viewDidLoad() {
@@ -45,7 +45,7 @@ class CollectionsViewController: UIViewController, UITableViewDelegate, UITableV
                     self.Outfits = resultList
                     self.collectionsTableView.reloadData()
                 }else{
-                    AlertClass.makeAlertWith(M: "Collection Display Error", S: "Collections could not prepared", ViewController: self)
+                    AlertClass.makeAlertWith(M: "Collection Display Warning", S: "Collections could not prepared", ViewController: self)
                 }
             }
         }

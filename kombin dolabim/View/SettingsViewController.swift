@@ -7,11 +7,11 @@
 
 import UIKit
 import CoreData
-import Firebase
+import FirebaseAuth
 
 class SettingsViewController: UIViewController {
 
-    private let myOutfitManager = OutfitManager()
+    private let myOutfitManager = OutfitManager(currUserEmail: (Auth.auth().currentUser?.email)!)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,12 +59,10 @@ class SettingsViewController: UIViewController {
     
     
     @IBAction func deleteOutfitsCloud(_ sender: Any) {
-        
         if Auth.auth().currentUser == nil{
             performSegue(withIdentifier: "toGetEmailVC", sender: nil)
             return
         }
-        
         myOutfitManager.deleteOutfitsFromCloud { succes in
             if succes{
                 AlertClass.makeAlertWith(M: "Done", S: "Your data was deleted form cloud", ViewController: self)

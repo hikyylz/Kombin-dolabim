@@ -23,6 +23,7 @@
 		EC1F895329A24FF000FD9C76 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895229A24FF000FD9C76 /* FirebaseDatabase */; };
 		EC1F895529A24FF000FD9C76 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = EC1F895429A24FF000FD9C76 /* FirebaseFirestore */; };
 		EC1F895729A28A4A00FD9C76 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */; };
+		EC691EE329E81ED30062C253 /* MyTop3OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC691EE229E81ED30062C253 /* MyTop3OutfitViewController.swift */; };
 		EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */; };
 		ECCB3A5429E1A38100E21CCB /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5329E1A38100E21CCB /* Alert.swift */; };
 		ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */; };
@@ -47,6 +48,7 @@
 		EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		EC691EE229E81ED30062C253 /* MyTop3OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTop3OutfitViewController.swift; sourceTree = "<group>"; };
 		EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetEmailViewController.swift; sourceTree = "<group>"; };
 		ECCB3A5329E1A38100E21CCB /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		ECCB3A5729E1EE5E00E21CCB /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 				EC1F894929A242C200FD9C76 /* OutfitTableViewCell.swift */,
 				EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */,
 				EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */,
+				EC691EE229E81ED30062C253 /* MyTop3OutfitViewController.swift */,
 				EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */,
 				EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */,
 				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
@@ -226,6 +229,7 @@
 			files = (
 				EC1F894829A23C8200FD9C76 /* CollectionsViewController.swift in Sources */,
 				EC1F893329A22C3700FD9C76 /* EntranceOfApp.swift in Sources */,
+				EC691EE329E81ED30062C253 /* MyTop3OutfitViewController.swift in Sources */,
 				EC1F892F29A22C3700FD9C76 /* AppDelegate.swift in Sources */,
 				ECCB3A5429E1A38100E21CCB /* Alert.swift in Sources */,
 				ECF7A78D29E44D8C009C0F77 /* OutfitManager.swift in Sources */,

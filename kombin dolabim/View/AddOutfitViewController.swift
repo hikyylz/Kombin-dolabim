@@ -15,7 +15,7 @@ class AddOutfitViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet var enteredComment: UITextField!
     @IBOutlet var saveButton: UIButton!
     
-    private let myOutfitManager = OutfitManager()
+    private let myOutfitManager = OutfitManager(currUserEmail: (Auth.auth().currentUser?.email)!)
     
     override func viewDidLoad() {
         super.viewDidLoad()

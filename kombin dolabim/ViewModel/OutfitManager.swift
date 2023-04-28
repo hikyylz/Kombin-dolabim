@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-import Firebase
+
 
 enum OutifitSavingStatus{
     case notSaved
@@ -16,8 +16,15 @@ enum OutifitSavingStatus{
 
 struct OutfitManager{
     
+    private let currUserEmail : String
     private let myCoreData = CoreData()
-    private let myCloud = Cloud(currUserEmail: (Auth.auth().currentUser?.email)!)
+    private let myCloud : Cloud
+    
+    init(currUserEmail: String) {
+        self.currUserEmail = currUserEmail
+        self.myCloud = Cloud(currUserEmail: currUserEmail)
+    }
+    
     
     
     func deleteOutfitsFromCloud(completion: @escaping(_ succes: Bool)->()){
@@ -33,7 +40,6 @@ struct OutfitManager{
     
     func saveOutfitsToCloud(completion:@escaping(_ succes: Bool)->()){
         
-        let currUserEmail = (Auth.auth().currentUser?.email)!
         guard let FetchReuslts = CoreData.FetchRequstWithPredicate(EntityName: "Outfit", predicateAtribute: "owner", currUserEmail) else{
             completion(false)
             return
@@ -48,10 +54,8 @@ struct OutfitManager{
                 completion(false)
             }
         }
-        
-        
-        
     }
+    
     
     func top3Tapped(cellID: String, completion: @escaping(UIColor)->()){
         let canBeTop3 = myCoreData.canbetop3()
@@ -60,7 +64,6 @@ struct OutfitManager{
             myCoreData.makeTop3(cellID: cellID) { returnedColor in
                 completion(returnedColor ?? .black)
             }
-            
         }else{
             // top3 olamaz. Olanı da kaldır.
             myCoreData.makeDarkOutfit(cellID: cellID)
@@ -86,7 +89,6 @@ struct OutfitManager{
         }else{
             completion(true, resultList)
         }
-        
     }
     
     
@@ -98,6 +100,20 @@ struct OutfitManager{
         }else{
             completion(OutifitSavingStatus.notSaved)
         }
-            
     }
+    
+    func getDataFromCloud(compeltin: @escaping([OutfitClass], _ isEmpty: Bool)->()){
+        myCloud.getTop3Outfits { outfitList  in
+            print("----", outfitList.count)
+            if outfitList.isEmpty{
+                print("girdi2-----------")
+                compeltin(outfitList, true)
+            }else{
+                print("girdi1-----------")
+                compeltin(outfitList, false)
+            }
+        }
+    }
+    
+    
 }
