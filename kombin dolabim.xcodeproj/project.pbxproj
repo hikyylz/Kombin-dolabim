@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EC13EF2B29FD0B5900B6070A /* MyTop2OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13EF2A29FD0B5900B6070A /* MyTop2OutfitViewController.swift */; };
+		EC13EF2D29FD0B6C00B6070A /* MyTop1OutfitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC13EF2C29FD0B6C00B6070A /* MyTop1OutfitViewController.swift */; };
 		EC1F892F29A22C3700FD9C76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */; };
 		EC1F893129A22C3700FD9C76 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */; };
 		EC1F893329A22C3700FD9C76 /* EntranceOfApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EC13EF2A29FD0B5900B6070A /* MyTop2OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTop2OutfitViewController.swift; sourceTree = "<group>"; };
+		EC13EF2C29FD0B6C00B6070A /* MyTop1OutfitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTop1OutfitViewController.swift; sourceTree = "<group>"; };
 		EC1F892B29A22C3700FD9C76 /* kombin dolabim.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "kombin dolabim.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 				EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */,
 				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
 				EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */,
+				EC13EF2A29FD0B5900B6070A /* MyTop2OutfitViewController.swift */,
+				EC13EF2C29FD0B6C00B6070A /* MyTop1OutfitViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -235,7 +241,9 @@
 				ECF7A78D29E44D8C009C0F77 /* OutfitManager.swift in Sources */,
 				ECCB3A5829E1EE5E00E21CCB /* CoreData.swift in Sources */,
 				EC1F893929A22C3700FD9C76 /* kombin_dolabim.xcdatamodeld in Sources */,
+				EC13EF2B29FD0B5900B6070A /* MyTop2OutfitViewController.swift in Sources */,
 				EC1F894629A2333600FD9C76 /* AddOutfitViewController.swift in Sources */,
+				EC13EF2D29FD0B6C00B6070A /* MyTop1OutfitViewController.swift in Sources */,
 				EC1F893129A22C3700FD9C76 /* SceneDelegate.swift in Sources */,
 				EC6A019A29DC14BB00F9A73E /* GetEmailViewController.swift in Sources */,
 				EC1F894A29A242C200FD9C76 /* OutfitTableViewCell.swift in Sources */,

@@ -106,7 +106,6 @@ struct OutfitManager{
         myCloud.getTop3Outfits { outfitList  in
             print("----", outfitList.count)
             if outfitList.isEmpty{
-                print("girdi2-----------")
                 compeltin(outfitList, true)
             }else{
                 print("girdi1-----------")
