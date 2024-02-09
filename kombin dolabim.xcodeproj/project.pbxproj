@@ -95,11 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				ECCB3A5229E1A23F00E21CCB /* Service */,
-				ECCB3A5129E1A23100E21CCB /* model */,
 				ECF7A78B29E44BBA009C0F77 /* ViewModel */,
 				ECCB3A5029E1A22400E21CCB /* View */,
 				EC1F893C29A22C3900FD9C76 /* LaunchScreen.storyboard */,
 				EC1F893429A22C3700FD9C76 /* Main.storyboard */,
+				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
+				EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */,
 				EC1F893A29A22C3900FD9C76 /* Assets.xcassets */,
 				EC1F893F29A22C3900FD9C76 /* Info.plist */,
 				EC1F894D29A24F4700FD9C76 /* GoogleService-Info.plist */,
@@ -108,30 +109,29 @@
 			path = "kombin dolabim";
 			sourceTree = "<group>";
 		};
+		EC479BD929FE724800989757 /* MyTopOutfits */ = {
+			isa = PBXGroup;
+			children = (
+				EC691EE229E81ED30062C253 /* MyTop3OutfitViewController.swift */,
+				EC13EF2A29FD0B5900B6070A /* MyTop2OutfitViewController.swift */,
+				EC13EF2C29FD0B6C00B6070A /* MyTop1OutfitViewController.swift */,
+			);
+			path = MyTopOutfits;
+			sourceTree = "<group>";
+		};
 		ECCB3A5029E1A22400E21CCB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EC479BD929FE724800989757 /* MyTopOutfits */,
 				EC1F894529A2333600FD9C76 /* AddOutfitViewController.swift */,
 				EC1F894729A23C8200FD9C76 /* CollectionsViewController.swift */,
 				EC1F894929A242C200FD9C76 /* OutfitTableViewCell.swift */,
 				EC1F894B29A24A3900FD9C76 /* SettingsViewController.swift */,
 				EC1F895629A28A4A00FD9C76 /* AccountViewController.swift */,
-				EC691EE229E81ED30062C253 /* MyTop3OutfitViewController.swift */,
 				EC6A019929DC14BB00F9A73E /* GetEmailViewController.swift */,
 				EC1F893229A22C3700FD9C76 /* EntranceOfApp.swift */,
-				EC1F893029A22C3700FD9C76 /* SceneDelegate.swift */,
-				EC1F892E29A22C3700FD9C76 /* AppDelegate.swift */,
-				EC13EF2A29FD0B5900B6070A /* MyTop2OutfitViewController.swift */,
-				EC13EF2C29FD0B6C00B6070A /* MyTop1OutfitViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		ECCB3A5129E1A23100E21CCB /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 		ECCB3A5229E1A23F00E21CCB /* Service */ = {

@@ -104,11 +104,9 @@ struct OutfitManager{
     
     func getDataFromCloud(compeltin: @escaping([OutfitClass], _ isEmpty: Bool)->()){
         myCloud.getTop3Outfits { outfitList  in
-            print("----", outfitList.count)
             if outfitList.isEmpty{
                 compeltin(outfitList, true)
             }else{
-                print("girdi1-----------")
                 compeltin(outfitList, false)
             }
         }

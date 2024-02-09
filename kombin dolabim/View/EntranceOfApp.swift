@@ -19,13 +19,11 @@ class EntranceOfApp: UIViewController {
     @IBOutlet var emailF: UITextField!
     @IBOutlet var passwordF: UITextField!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
-
-
+    
     @IBAction func viaFaceIDTapped(_ sender: Any) {
         
         let autContext = LAContext()
